@@ -22,6 +22,11 @@ I built this project to challenge my understanding of computer science fundament
 - [x] **Control (`while` / `end`):** Conditional looping with dynamic line jumping.
 - [x] **Output (`print`):** Standard output for variables and expression evaluations.
 
+## Codes Exemples
+
+- **FizzBuzz:** 0 = normal | 1 = Fizz or Buzz | 2 = FizzBuzz
+
+
 ---
 
 ## Syntax Example
@@ -47,7 +52,7 @@ end
 
 2. **Run an example script:**
    ```bash
-   python interpreter.py p1
+   python3 interpreter.py Examples/ExampleName
    ```
 
 ---
