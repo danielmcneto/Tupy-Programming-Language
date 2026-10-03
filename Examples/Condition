@@ -1,0 +1,10 @@
+a = 3
+
+
+if a % 2 == 0
+    print 'Even'
+endif
+
+if a % 2 != 0
+    print 'Odd'
+endif

@@ -1,15 +1,31 @@
 n = 1
 
 while n <= 100
+
     r3 = n % 3
     r5 = n % 5
 
-    f = r3 == 0
-    b = r5 == 0
+    fizz = r3 == 0
+    buzz = r5 == 0
 
-    code = f + b
+    codigo = fizz * 2 + buzz
 
-    print code
+    if codigo == 3
+        print 'FizzBuzz'
+    endif
+
+    if codigo == 2
+        print 'Fizz'
+    endif
+
+    if codigo == 1
+        print 'Buzz'
+    endif
+
+    if codigo == 0
+        print n
+    endif
 
     n = n + 1
-end
+
+endwhile

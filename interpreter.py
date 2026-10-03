@@ -8,18 +8,31 @@ class Ev:
         while pc < len(lines):
             line = lines[pc]
             match line.split(maxsplit=1)[0]:
+                case 'if':
+                    if self.ev_expr(line.split(maxsplit=1)[1]) != 0: pc += 1
+                    else:
+                        while lines[pc].split(maxsplit=1)[0] != 'endif':
+                            pc += 1
+                        pc += 1
+                case 'endif':
+                    pc += 1
                 case 'while':
                     if self.ev_expr(line.split(maxsplit=1)[1]) != 0: pc += 1
                     else: 
-                        while lines[pc].split(maxsplit=1)[0] != 'end':
+                        while lines[pc].split(maxsplit=1)[0] != 'endwhile':
                             pc += 1
                         pc += 1
-                case 'end':
-                    while lines[pc].split(maxsplit=1)[0] != 'while': pc -= 1
+                case 'endwhile':
+                    while lines[pc].split(maxsplit=1)[0] != 'while': 
+                        pc -= 1
                 case 'print':
                     expr =  line.split(maxsplit=1)[1] if len(line.split()) > 1 else ""
-                    res = self.ev_expr(expr)
-                    print(res)
+                    if "'" in expr:
+                        expr = expr.replace("'", "")
+                        print(expr)
+                    else:
+                        res = self.ev_expr(expr)
+                        print(res)
                     pc += 1
                 case _:
                     if "=" in line:
@@ -51,6 +64,7 @@ class Ev:
             elif op == "<": res = 1 if res < val else 0
             elif op == "%":res = res % val
             elif op == "==":res = 1 if res == val else 0
+            elif op == "!=":res = 1 if res != val else 0
             
                         
             i += 2
