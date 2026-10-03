@@ -26,7 +26,7 @@ I built this project to challenge my understanding of computer science fundament
 
 ## Syntax Example
 
-Here is a quick look at a program written in **[Language Name]**:
+Here is a quick look at a program written in **Tupy**:
 
 ```text
 n = 5
