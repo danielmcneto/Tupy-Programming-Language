@@ -25,6 +25,7 @@ I built this project to challenge my understanding of computer science fundament
 ## Codes Exemples
 
 - **FizzBuzz:** 0 = normal | 1 = Fizz or Buzz | 2 = FizzBuzz
+- **Math:** A simple calculos output
 
 
 ---
