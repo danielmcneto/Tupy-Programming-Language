@@ -26,13 +26,14 @@ I built this project to challenge my understanding of computer science fundament
 
 - **FizzBuzz:** 0 = normal | 1 = Fizz or Buzz | 2 = FizzBuzz
 - **Math:** A simple calculus output
-
+- **Condition:** Outputs if the variable is even or odd number
 
 ---
 
 ## Syntax Example
 
 Here is a quick look at a program written in **Tupy**:
+
 
 ```text
 n = 5
@@ -42,8 +43,9 @@ while n >= 1
     a = a * 2
     n = n - 1
     print a
-end
+endwhile
 ```
+Indentation is optional in Tupy and is used here solely for clarity.
 
 ---
 
