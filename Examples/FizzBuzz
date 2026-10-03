@@ -8,21 +8,21 @@ while n <= 100
     fizz = r3 == 0
     buzz = r5 == 0
 
-    codigo = fizz * 2 + buzz
+    code = fizz * 2 + buzz
 
-    if codigo == 3
+    if code == 3
         print 'FizzBuzz'
     endif
 
-    if codigo == 2
+    if code == 2
         print 'Fizz'
     endif
 
-    if codigo == 1
+    if code == 1
         print 'Buzz'
     endif
 
-    if codigo == 0
+    if code == 0
         print n
     endif
 
