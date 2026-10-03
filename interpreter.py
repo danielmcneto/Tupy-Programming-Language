@@ -38,7 +38,11 @@ class Ev:
                     if "=" in line:
                         var_name, expr = line.split("=", 1)
                         var_name = var_name.strip()
-                        self.vars[var_name] = self.ev_expr(expr.strip())
+                        if "'" in expr:
+                            expr = expr.replace("'", "")
+                            self.vars[var_name] = expr.strip()
+                        else:
+                            self.vars[var_name] = self.ev_expr(expr.strip())
                     else:
                         res = self.ev_expr(line)
                     pc += 1
@@ -59,7 +63,6 @@ class Ev:
             elif op == "/": res = int(res / val)
             elif op == ">=": res = 1 if res >= val else 0
             elif op == "<=": res = 1 if res <= val else 0
-            elif op == "==": res = 1 if res == val else 0
             elif op == ">": res = 1 if res > val else 0
             elif op == "<": res = 1 if res < val else 0
             elif op == "%":res = res % val
