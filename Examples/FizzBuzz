@@ -1,0 +1,15 @@
+n = 1
+
+while n <= 100
+    r3 = n % 3
+    r5 = n % 5
+
+    f = r3 == 0
+    b = r5 == 0
+
+    codigo = f + b
+
+    print codigo
+
+    n = n + 1
+end

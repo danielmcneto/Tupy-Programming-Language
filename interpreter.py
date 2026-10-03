@@ -10,9 +10,11 @@ class Ev:
             line = lines[pc]
             match line.split(maxsplit=1)[0]:
                 case 'while':
-                    if self.ev_expr(line.split(maxsplit=1)[1]) == 1: pc += 1
+                    if self.ev_expr(line.split(maxsplit=1)[1]) != 0: pc += 1
                     else: 
-                        while lines[pc].split(maxsplit=1)[0] != 'end': pc += 1
+                        while lines[pc].split(maxsplit=1)[0] != 'end':
+                            pc += 1
+                        pc += 1
                 case 'end':
                     while lines[pc].split(maxsplit=1)[0] != 'while': pc -= 1
                 case 'print':
@@ -27,7 +29,6 @@ class Ev:
                         self.vars[var_name] = self.ev_expr(expr.strip())
                     else:
                         res = self.ev_expr(line)
-                        print(res)
                     pc += 1
     def ev_expr(self, s):
         toks = s.split()
@@ -47,7 +48,12 @@ class Ev:
             elif op == ">=": res = 1 if res >= val else 0
             elif op == "<=": res = 1 if res <= val else 0
             elif op == "==": res = 1 if res == val else 0
+            elif op == ">": res = 1 if res > val else 0
+            elif op == "<": res = 1 if res < val else 0
+            elif op == "%":res = res % val
+            elif op == "==":res = 1 if res == val else 0
             
+                        
             i += 2
         return res
 
