@@ -2,7 +2,6 @@ import sys
 class Ev:
     def __init__(self):
         self.vars = {}
-
     def ev(self, s):
         lines = [x for x in s.split("\n") if x.strip() != ""]
         pc = 0
